@@ -13,7 +13,9 @@ public class Main {
 
         Menu menu = new Menu();
         menu.menu();
+
         DBConnection.connection.close();
+
         System.exit(0);
     }
 
