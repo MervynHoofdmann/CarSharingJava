@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public class Main {
     public static InDatabaseCompanyDao companyDao = new InDatabaseCompanyDao();
+    public static InDatabaseCarDao carDao = new InDatabaseCarDao();
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
 

@@ -19,10 +19,16 @@ public class Database {
         Class.forName("org.h2.Driver");
 
         Statement stmt = DBConnection.connection.createStatement();
-        String dropOldTable = "DROP TABLE IF EXISTS COMPANY";
-        String createNewTable = "CREATE TABLE COMPANY (ID INT AUTO_INCREMENT, NAME VARCHAR NOT NULL UNIQUE, PRIMARY KEY(ID))";
-        stmt.executeUpdate(dropOldTable);
-        stmt.executeUpdate(createNewTable);
+
+        String dropOldCarTable = "DROP TABLE IF EXISTS car";
+        String dropOldCompanyTable = "DROP TABLE IF EXISTS company";
+        String createNewCompanyTable = "CREATE TABLE company (id INT AUTO_INCREMENT, name VARCHAR NOT NULL UNIQUE, PRIMARY KEY(id))";
+        String createNewCarTable = "CREATE TABLE car (id INT AUTO_INCREMENT, name VARCHAR NOT NULL UNIQUE, company_id INT NOT NULL, CONSTRAINT fk_id FOREIGN KEY (company_id) REFERENCES company(id), PRIMARY KEY(id))";
+
+        stmt.executeUpdate(dropOldCarTable);
+        stmt.executeUpdate(dropOldCompanyTable);
+        stmt.executeUpdate(createNewCompanyTable);
+        stmt.executeUpdate(createNewCarTable);
     }
 
 }

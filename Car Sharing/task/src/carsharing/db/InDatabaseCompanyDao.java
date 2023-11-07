@@ -3,7 +3,7 @@ package carsharing.db;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InDatabaseCompanyDao implements  CompanyDao {
+public class InDatabaseCompanyDao implements CompanyDao {
     public List<Company> companies;
 
     public InDatabaseCompanyDao() {
@@ -29,7 +29,6 @@ public class InDatabaseCompanyDao implements  CompanyDao {
     @Override
     public void add(Company company) {
         companies.add(company);
-        System.out.println(company.getId() + ". " + company.getName());
     }
 
     @Override
