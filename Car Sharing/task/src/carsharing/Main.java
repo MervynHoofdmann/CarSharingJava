@@ -5,8 +5,9 @@ import carsharing.db.*;
 import java.sql.SQLException;
 
 public class Main {
-    public static InDatabaseCompanyDao companyDao = new InDatabaseCompanyDao();
-    public static InDatabaseCarDao carDao = new InDatabaseCarDao();
+    public static CompanyDao companyDao = new CompanyDao();
+    public static CarDao carDao = new CarDao();
+    public static CustomerDao customerDao = new CustomerDao();
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
@@ -19,4 +20,6 @@ public class Main {
 
         System.exit(0);
     }
+
+
 }
